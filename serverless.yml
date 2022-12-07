@@ -27,13 +27,13 @@ Glue:
     - name: ${env:job_name}
       scriptPath: ${env:glue_script_python_file_name}
       type: spark
-      glueVersion: python3-3.9
+      glueVersion: python3-2.0
       role: ${env:glue_iam}
       MaxConcurrentRuns: 3
       WorkerType: Standard
       NumberOfWorkers: 1
       Timeout: 2880
-      MaxRetries: 2
+      MaxRetries: 1
       SupportFiles:
         - local_path: ${env:local_path}
           s3_bucket: ${env:s3_bucket}
